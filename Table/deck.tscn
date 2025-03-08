@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfjrkorpei6w"]
+
+[ext_resource type="Script" path="res://Main/Deck.gd" id="1_r0ojw"]
+[ext_resource type="Texture2D" uid="uid://b36rk2k4p4gtw" path="res://img/Deck.png" id="2_cymiw"]
+[ext_resource type="FontFile" uid="uid://jm3tev1nmncj" path="res://img/MedievalSharp-Regular.ttf" id="3_g7qc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dkyl"]
+size = Vector2(146, 192)
+
+[sub_resource type="FontVariation" id="FontVariation_aag5y"]
+base_font = ExtResource("3_g7qc5")
+
+[node name="Deck" type="Node2D"]
+position = Vector2(302, 698)
+script = ExtResource("1_r0ojw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(0.135185, 0.142222)
+texture = ExtResource("2_cymiw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_3dkyl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.8, 0.768627, 0.682353, 1)
+z_index = -2
+offset_left = -11.0
+offset_top = -17.005
+offset_right = 29.0
+offset_bottom = 22.995
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = SubResource("FontVariation_aag5y")
+text = "0"

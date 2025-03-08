@@ -1,15 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsg0dlijektdf"]
+[gd_scene load_steps=6 format=3 uid="uid://dsg0dlijektdf"]
 
 [ext_resource type="Script" path="res://Card/CardManager.gd" id="1_lr0lk"]
-[ext_resource type="PackedScene" uid="uid://d4iaygx8g7lyp" path="res://Card/card.tscn" id="2_sjruf"]
+[ext_resource type="PackedScene" uid="uid://cdbaoq37rq8g0" path="res://Table/CardSlot.tscn" id="3_labs7"]
+[ext_resource type="Script" path="res://Main/PlayerHand.gd" id="3_s7q4s"]
+[ext_resource type="PackedScene" uid="uid://dfjrkorpei6w" path="res://Table/deck.tscn" id="4_tl6m8"]
+[ext_resource type="Script" path="res://Main/InputManager.gd" id="6_oje3y"]
 
 [node name="Main" type="Node2D"]
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_lr0lk")
 
-[node name="Card" parent="CardManager" instance=ExtResource("2_sjruf")]
-position = Vector2(251, 202)
+[node name="CardSlot" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(730, 265)
 
-[node name="Card2" parent="CardManager" instance=ExtResource("2_sjruf")]
-position = Vector2(930, 427)
+[node name="CardSlot2" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(917, 267)
+
+[node name="PlayerHand" type="Node2D" parent="."]
+script = ExtResource("3_s7q4s")
+
+[node name="CardSlot3" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(1100, 695)
+
+[node name="CardSlot4" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(923, 696)
+
+[node name="CardSlot5" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(730, 692)
+
+[node name="CardSlot6" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(1100, 480)
+
+[node name="CardSlot7" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(917, 478)
+
+[node name="CardSlot8" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(730, 480)
+
+[node name="CardSlot9" parent="." instance=ExtResource("3_labs7")]
+position = Vector2(1098, 267)
+
+[node name="Deck" parent="." instance=ExtResource("4_tl6m8")]
+
+[node name="InputManager" type="Node2D" parent="."]
+script = ExtResource("6_oje3y")
